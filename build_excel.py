@@ -14,9 +14,15 @@ from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.hyperlink import Hyperlink
 
-FILE1 = '/root/.claude/uploads/fdd8558c-9708-5264-982e-bcf811630994/5415aa07-034272________________________________________.xls'
-CONFIRMED_JSON = '/home/user/alanaya/confirmed_matches.json'
-OUTPUT_FILE = '/home/user/alanaya/price_comparison_output.xlsx'
+FILE1 = (
+    '/root/.claude/uploads/fdd8558c-9708-5264-982e-bcf811630994/'
+    '5415aa07-034272________________________________________.xls'
+)
+# When running locally, set FILE1 to the path of your .xls file, e.g.:
+# FILE1 = r'C:\Users\you\Downloads\5415aa07-034272.xls'
+
+CONFIRMED_JSON = os.path.join(os.path.dirname(__file__), 'confirmed_matches.json')
+OUTPUT_FILE    = os.path.join(os.path.dirname(__file__), 'price_comparison_output.xlsx')
 
 COMPETITORS = [
     {'key': 'dar',    'name': 'دار الاميرات',   'domain': 'daralamirat.com.sa',  'search_base': 'https://daralamirat.com.sa/search?q='},
